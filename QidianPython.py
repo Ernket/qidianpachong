@@ -13,8 +13,8 @@ def get_url(url):
 def downloadtxt(bkurl):
 	url="https:"+get_url(bkurl)
 	while True:
-		html=urlopen(url)
 		try:
+			html=urlopen(url)
 			bsObj=BeautifulSoup(html,"html5lib")
 			bt=bsObj.find('title') #查找小说名字
 			chapter=bsObj.find("div",{"class","read-content"}) #查找小说
