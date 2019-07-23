@@ -10,7 +10,7 @@ def get_url(url):
 	nurl=neir[0].get('href')
 	return nurl
 
-def downloadtxt(bkurl):
+def downloadtxt(bkurl,bkname):
 	url="https:"+get_url(bkurl)
 	while True:
 		try:
@@ -19,8 +19,6 @@ def downloadtxt(bkurl):
 			bt=bsObj.find('title') #查找小说名字
 			chapter=bsObj.find("div",{"class","read-content"}) #查找小说
 			chapter=chapter.find_all("p")
-			bookname=bsObj.select('div a')[37]
-			bkname=bookname.text #将小说名转换成纯文本
 			fo=open(bkname+".txt","a",encoding='UTF-8') #保存txt文件，并将名字设置为小说名
 			fo.write("\n"+bt.get_text()+"\n") #内容写入
 			for i in chapter:
@@ -56,4 +54,5 @@ except:
 	print("ID错误，程序即将退出...")
 	time.sleep(3)
 bkurl=book_url[whichbook-1]
-downloadtxt(bkurl)
+bkname=book_name[whichbook-1]
+downloadtxt(bkurl,bkname)
