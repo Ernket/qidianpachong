@@ -46,6 +46,7 @@ print('''
                         |__/
 
 ''')
+password=''
 url="https://www.qidian.com/free"
 html=urlopen(url)
 bsObj=BeautifulSoup(html,"html5lib")
