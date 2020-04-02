@@ -46,8 +46,6 @@ print('''
                         |__/
 
 ''')
-username='Elapse'
-password=''
 url="https://www.qidian.com/free"
 html=urlopen(url)
 bsObj=BeautifulSoup(html,"html5lib")
