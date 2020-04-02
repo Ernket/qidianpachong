@@ -46,6 +46,7 @@ print('''
                         |__/
 
 ''')
+username='Elapse'
 password=''
 url="https://www.qidian.com/free"
 html=urlopen(url)
